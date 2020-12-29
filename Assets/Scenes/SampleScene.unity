@@ -571,8 +571,8 @@ GameObject:
   - component: {fileID: 2077075382}
   - component: {fileID: 2077075381}
   - component: {fileID: 2077075380}
-  - component: {fileID: 2077075384}
   - component: {fileID: 2077075385}
+  - component: {fileID: 2077075384}
   m_Layer: 0
   m_Name: SimpleFighter
   m_TagString: Untagged
@@ -699,13 +699,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077075379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26aaf8347ae502841b0b8e61029de0f7, type: 3}
+  m_Script: {fileID: 11500000, guid: cdd7482ce5b40cd47b568bff11657a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
   invicible: 0
   isInputting: 0
   isDodgeing: 0
+  isLowKicking: 0
   attackDelay: 0.3
 --- !u!95 &2077075385
 Animator:
