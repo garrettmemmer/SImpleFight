@@ -43,14 +43,12 @@ public class PlayerController : MonoBehaviour
         {
             isInputting = true;
             isLowKicking = true;
-            Debug.Log("LK pressed");
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) //Dodge
         {
             isInputting = true;
             isDodgeing = true;
-            Debug.Log("dodge pressed");
         }
 
 
@@ -93,14 +91,11 @@ public class PlayerController : MonoBehaviour
                 if (isLowKicking)
                 {  //low kick
                     ChangeAnimationState(Player_LK);
-                    Debug.Log("low kicked");
                     
                 }
                 else if (isDodgeing) //dodge
                 {
-                    ChangeAnimationState(Player_dodge);
-                    Debug.Log("dodged");
-                
+                    ChangeAnimationState(Player_dodge);   
                 }
 
                 // else if () //heavy kick
