@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking;
 
     [SerializeField]
-    private float attackDelay = 0.3f;
+    private float attackDelay = 1f;
 
     //Animation States
     const string Player_idle = "PlayerIdle";
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if (!isAttacking)
         {
-           // ChangeAnimationState(Player_idle);
+            ChangeAnimationState(Player_idle);
         }
 
 
