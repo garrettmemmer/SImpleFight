@@ -51,21 +51,22 @@ public class PlayerController : MonoBehaviour
             isDodgeing = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Charge
+        {
+            isInputting = true;
+            //isCharging = true;
+        }
+        
+       // if (Input.GetButtonUp(KeyCode.C)) //Heavy Kick Released
+      //  {
+            //isReleased = true;
+      //  }
+
+        
 
 
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * walkSpeed;
-        /*
-        if (Input.GetKey(KeyCode.D)) //Right
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, 0);
-        }
-
-        if (Input.GetKey(KeyCode.A)) // Left
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, 0);
-        }
-        */
     }
 
     private void FixedUpdate()
@@ -100,7 +101,8 @@ public class PlayerController : MonoBehaviour
 
                 // else if () //heavy kick
                 //this will need the hold and release
-                // { } //ChangeAnimationState(PLAYER_ATTACK);
+                // { //ChangeAnimationState(PLAYER_ATTACK);
+                //} 
 
 
                 Invoke("AttackComplete", attackDelay);
