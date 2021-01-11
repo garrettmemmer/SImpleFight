@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public bool isInputting = false;
     public bool isDodgeing = false;
     public bool isLowKicking = false;
+    public bool isHkStarted = false;
+    public bool isHkCharging = false;
+    public bool isHkReleased = false;
     private bool isAttackPressed;
     private bool isAttacking;
 
@@ -25,6 +28,9 @@ public class PlayerController : MonoBehaviour
     const string Player_idle = "PlayerIdle";
     const string Player_dodge = "SFDodge";
     const string Player_LK = "SFLK";
+    const string Player_HkStart = "SfHkStart";
+    const string Player_HkCharge = "SfHkCharge";
+    const string Player_HkRelease = "SfHkRelease";
 
     // Start is called before the first frame update
     void Start()
@@ -51,16 +57,23 @@ public class PlayerController : MonoBehaviour
             isDodgeing = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Charge
+        if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Start
         {
             isInputting = true;
-            //isCharging = true;
+            isHkStarted = true;
         }
+
+        //if (isHkCharging)
+       // {
+        //    isInputting = true;
+        //}
         
-       // if (Input.GetButtonUp(KeyCode.C)) //Heavy Kick Released
-      //  {
-            //isReleased = true;
-      //  }
+        if (Input.GetKeyUp(KeyCode.C)) //Heavy Kick Released
+        {
+            isInputting = true;
+            isHkReleased = true;
+        }
+
 
         
 
@@ -99,10 +112,21 @@ public class PlayerController : MonoBehaviour
                     ChangeAnimationState(Player_dodge);   
                 }
 
-                // else if () //heavy kick
+                else if (isHkStarted) //heavy kick
                 //this will need the hold and release
-                // { //ChangeAnimationState(PLAYER_ATTACK);
-                //} 
+                { 
+                    ChangeAnimationState(Player_HkStart);
+                    isHkCharging = true;
+                    //then HkCharge until "C" is released 
+                } 
+                else if (isHkCharging)
+                {
+                    ChangeAnimationState(Player_HkCharge);
+                }
+                else if (isHkReleased)
+                {
+                    ChangeAnimationState(Player_HkRelease);
+                }
 
 
                 Invoke("AttackComplete", attackDelay);
@@ -121,6 +145,9 @@ public class PlayerController : MonoBehaviour
         isAttacking = false;
         isDodgeing = false;
         isLowKicking = false;
+        isHkStarted = false;
+        isHkCharging = false;
+        isHkReleased = false;
     }
 
     void ChangeAnimationState(string newAnimation)
