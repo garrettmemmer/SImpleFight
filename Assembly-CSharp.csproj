@@ -56,6 +56,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AITest.cs" />
+     <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
+     <Compile Include="Assets\Scripts\HealthBar_AI.cs" />
+     <Compile Include="Assets\Scripts\HealthBar_Script.cs" />
      <Compile Include="Assets\Scripts\Hit.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
  <Reference Include="Unity.Timeline.Editor">

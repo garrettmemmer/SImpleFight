@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float xAxis;
     public float walkSpeed = 5f;
 
+    public float Health = 100f;
+
     public bool invicible = false;
     private string currentAnimaton;
     public bool isInputting = false;
@@ -22,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking;
 
     [SerializeField]
-    private float attackDelay = 1f;
+    private float attackDelay = 1f; // do we need different attack delays?
 
     //Animation States
     const string Player_idle = "PlayerIdle";
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
     const string Player_HkStart = "SfHkStart";
     const string Player_HkCharge = "SfHkCharge";
     const string Player_HkRelease = "SfHkRelease";
+    const string Player_HkFull = "SfHkFull";
 
     // Start is called before the first frame update
     void Start()
@@ -57,26 +60,22 @@ public class PlayerController : MonoBehaviour
             isDodgeing = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Start
-        {
-            isInputting = true;
-            isHkStarted = true;
-        }
+       // if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Start
+       // {
+      //      isInputting = true;
+      //      isHkStarted = true;
+       // }
 
         //if (isHkCharging)
        // {
         //    isInputting = true;
         //}
         
-        if (Input.GetKeyUp(KeyCode.C)) //Heavy Kick Released
-        {
-            isInputting = true;
-            isHkReleased = true;
-        }
-
-
-        
-
+        //if (Input.GetKeyUp(KeyCode.C)) //Heavy Kick Released
+        //{
+       //     isInputting = true;
+       //     isHkReleased = true;
+        //}
 
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * walkSpeed;
@@ -112,30 +111,24 @@ public class PlayerController : MonoBehaviour
                     ChangeAnimationState(Player_dodge);   
                 }
 
-                else if (isHkStarted) //heavy kick
+               // else if (isHkStarted) //heavy kick
                 //this will need the hold and release
-                { 
-                    ChangeAnimationState(Player_HkStart);
-                    isHkCharging = true;
-                    //then HkCharge until "C" is released 
-                } 
-                else if (isHkCharging)
-                {
-                    ChangeAnimationState(Player_HkCharge);
-                }
-                else if (isHkReleased)
-                {
-                    ChangeAnimationState(Player_HkRelease);
-                }
+               // { 
+               //     ChangeAnimationState(Player_HkFull);
 
+               // } 
+               // else if (isHkCharging)
+               // {
+               //     ChangeAnimationState(Player_HkCharge);
+               // }
+               // else if (isHkReleased)
+               // {
+               //     ChangeAnimationState(Player_HkRelease);
+               // }
 
                 Invoke("AttackComplete", attackDelay);
-
-
             }
         }
-
-
     }
 
 

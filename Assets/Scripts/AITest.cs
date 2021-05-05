@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AITest : MonoBehaviour
 {
+
+    public float Health = 100f;
+
+
     // Start is called before the first frame update
     void Start()
     {
