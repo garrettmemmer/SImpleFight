@@ -60,23 +60,6 @@ public class PlayerController : MonoBehaviour
             isDodgeing = true;
         }
 
-       // if (Input.GetKeyDown(KeyCode.C)) //Heavy Kick Start
-       // {
-      //      isInputting = true;
-      //      isHkStarted = true;
-       // }
-
-        //if (isHkCharging)
-       // {
-        //    isInputting = true;
-        //}
-        
-        //if (Input.GetKeyUp(KeyCode.C)) //Heavy Kick Released
-        //{
-       //     isInputting = true;
-       //     isHkReleased = true;
-        //}
-
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * walkSpeed;
     }

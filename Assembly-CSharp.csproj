@@ -61,7 +61,7 @@
      <Compile Include="Assets\Scripts\HealthBar_Script.cs" />
      <Compile Include="Assets\Scripts\Hit.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\ShakeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\ShakeBehaviour.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Garrett/Documents/GitHub/SImpleFight/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

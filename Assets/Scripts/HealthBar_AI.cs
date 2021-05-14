@@ -17,8 +17,6 @@ public class HealthBar_AI : MonoBehaviour
     {
         HealthBar = GetComponent<Image>();
         AI_Script = FindObjectOfType<AITest>();
-
-
     }
 
     // Update is called once per frame
@@ -27,6 +25,4 @@ public class HealthBar_AI : MonoBehaviour
         CurrentHealthAI = AI_Script.Health;
         HealthBar.fillAmount = CurrentHealthAI / MaxHealth; 
     }
-
-
 }

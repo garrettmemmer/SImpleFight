@@ -48,7 +48,7 @@ public class ShakeBehaviour : MonoBehaviour
         if(shakeMe == true)
         {
             TriggerShake();
-            Debug.Log(shakeDuration); // "ScreenWiggle() called");
+            //Debug.Log(shakeDuration); // "ScreenWiggle() called");
             shakeMe = false;
         }
 
@@ -57,7 +57,7 @@ public class ShakeBehaviour : MonoBehaviour
             transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
 
             shakeDuration -= Time.deltaTime * dampingSpeed;
-            Debug.Log("inside shakeDuration > 0;....." +  shakeDuration);
+            //Debug.Log("inside shakeDuration > 0;....." +  shakeDuration);
         }
         else
         {
