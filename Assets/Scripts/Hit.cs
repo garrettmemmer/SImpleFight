@@ -48,11 +48,12 @@ public class Hit : MonoBehaviour
 
             
         }
+        hit = false;
     }
 
     void DecreaseHealth()
     {
-        AI_Script.Health -= 100;
+        AI_Script.Health -= 10;
     }
 
 
@@ -64,11 +65,14 @@ public class Hit : MonoBehaviour
 
         if (hit == true)
         {
-            AI_Script.moveDirection.x += 100;
-            //Debug.Log();
+            //AI_Script.moveDirection.x = 10;
+            AI_Script.moveDirection.x = 10;
+            Debug.Log("we are in the loop");
+            Debug.Log(hit);
             hit = false;
+            
         }
-        AI_Script.moveDirection.x = 0;
+        AI_Script.moveDirection.x = 0;  //orginal plan was have it jump up to 100 and then back down, but it never changes when doing it this way
         Debug.Log(hit);
     }
 

@@ -23,8 +23,12 @@ public class AITest : MonoBehaviour
     void Update()
     {
         //Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += moveDirection * Time.deltaTime;
+        //transform.position += moveDirection * Time.deltaTime;
+        Move();
     }
 
-
+    void Move()
+    {
+        transform.position += moveDirection * Time.deltaTime;
+    }
 }
