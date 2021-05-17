@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 420640104}
   m_Layer: 0
   m_Name: SimpleFighterAI
-  m_TagString: Untagged
+  m_TagString: Computer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,6 +298,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  moveDirection: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
+  knockback: 0
+  knockbackLength: 0
+  knockbackCount: 0
 --- !u!61 &420640105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339,7 +344,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 10
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -473,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fe0079595593e4b9dbdd4dfa5a244d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeMe: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -964,9 +970,10 @@ GameObject:
   - component: {fileID: 1795067645}
   - component: {fileID: 1795067646}
   - component: {fileID: 1795067647}
+  - component: {fileID: 1795067648}
   m_Layer: 0
   m_Name: LowKickHitbox
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1016,6 +1023,21 @@ MonoBehaviour:
   hitParticles: {fileID: 6990818399623329616, guid: 9d5d2d18c0c97b646aecdd2d79b094fe,
     type: 3}
   newHealthAI: 0
+  hit: 0
+--- !u!114 &1795067648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795067644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f125df52ad41044ad23d325a7ac6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.2
 --- !u!1 &1954054401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1261,7 @@ GameObject:
   - component: {fileID: 2077075384}
   m_Layer: 0
   m_Name: SimpleFighter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1376,6 +1398,8 @@ MonoBehaviour:
   isHkStarted: 0
   isHkCharging: 0
   isHkReleased: 0
+  knockbackPower: 100
+  knockbackDuration: 1
   attackDelay: 1
 --- !u!95 &2077075385
 Animator:

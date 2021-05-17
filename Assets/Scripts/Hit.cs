@@ -34,7 +34,7 @@ public class Hit : MonoBehaviour
             ScreenWiggle();
 
             //Knockback
-            Knockback();
+            //Knockback();
             
 
             //play Hurt animation
@@ -56,7 +56,7 @@ public class Hit : MonoBehaviour
         AI_Script.Health -= 10;
     }
 
-
+    /*
     void Knockback()
     {
         //when a fighter gets hit, they should be knocked back a certain amount
@@ -72,10 +72,10 @@ public class Hit : MonoBehaviour
             hit = false;
             
         }
-        AI_Script.moveDirection.x = 0;  //orginal plan was have it jump up to 100 and then back down, but it never changes when doing it this way
+       // AI_Script.moveDirection.x = 0;  //orginal plan was have it jump up to 100 and then back down, but it never changes when doing it this way
         Debug.Log(hit);
     }
-
+    */
     void ScreenWiggle()
     {
         ScreenShake.shakeMe = true;

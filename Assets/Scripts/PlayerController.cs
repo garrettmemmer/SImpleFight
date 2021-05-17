@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     public bool isHkReleased = false;
     private bool isAttackPressed;
     private bool isAttacking;
+    public float knockbackPower = 100;
+    public float knockbackDuration = 1;
+
+
 
     [SerializeField]
     private float attackDelay = 1f; // do we need different attack delays?
@@ -133,5 +137,14 @@ public class PlayerController : MonoBehaviour
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
+
+
+   // public void OnCollisionEnter2D(Collision2D other)
+   // {
+   //     if(other.gameObject.tag == "Computer")
+   //     {
+   //         StartCoroutine(AITest.instance.Knockback(knockbackDuration, knockbackPower, this.transform));
+   //     }
+ //   }
 
 }
