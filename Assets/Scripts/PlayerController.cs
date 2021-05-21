@@ -98,26 +98,10 @@ public class PlayerController : MonoBehaviour
                     ChangeAnimationState(Player_dodge);   
                 }
 
-               // else if (isHkStarted) //heavy kick
-                //this will need the hold and release
-               // { 
-               //     ChangeAnimationState(Player_HkFull);
-
-               // } 
-               // else if (isHkCharging)
-               // {
-               //     ChangeAnimationState(Player_HkCharge);
-               // }
-               // else if (isHkReleased)
-               // {
-               //     ChangeAnimationState(Player_HkRelease);
-               // }
-
                 Invoke("AttackComplete", attackDelay);
             }
         }
     }
-
 
 
     void AttackComplete()
@@ -133,18 +117,7 @@ public class PlayerController : MonoBehaviour
     void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
-
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
     }
-
-
-   // public void OnCollisionEnter2D(Collision2D other)
-   // {
-   //     if(other.gameObject.tag == "Computer")
-   //     {
-   //         StartCoroutine(AITest.instance.Knockback(knockbackDuration, knockbackPower, this.transform));
-   //     }
- //   }
-
 }

@@ -10,10 +10,8 @@ public class Hit : MonoBehaviour
     ShakeBehaviour ScreenShake;
     PlayerController Player_Script;
 
-   public float newHealthAI; //i think this line is deprecated
-
+    public float newHealthAI; //i think this line is deprecated
     public bool hit = false; 
-
 
     void Start()
     {
@@ -21,7 +19,7 @@ public class Hit : MonoBehaviour
         ScreenShake = FindObjectOfType<ShakeBehaviour>();
     }
 
-    void OnTriggerEnter2D(Collider2D col) //wjen the computer gets hit
+    void OnTriggerEnter2D(Collider2D col) //when the computer gets hit
     {
         if (col.gameObject.name.Equals("SimpleFighterAI"))
         {
@@ -33,20 +31,13 @@ public class Hit : MonoBehaviour
             //screenshake
             ScreenWiggle();
 
-            //Knockback
-            //Knockback();
-            
-
             //play Hurt animation
+            HurtAnim();
 
-            //hit stun
-
+            //hit stun ///not yet in the game
 
             //adjust health
             DecreaseHealth();
-
-
-            
         }
         hit = false;
     }
@@ -56,43 +47,22 @@ public class Hit : MonoBehaviour
         AI_Script.Health -= 10;
     }
 
-    /*
-    void Knockback()
-    {
-        //when a fighter gets hit, they should be knocked back a certain amount
-        //this will be expanded on in the future 
-        //for now we will do a set distance
-
-        if (hit == true)
-        {
-            //AI_Script.moveDirection.x = 10;
-            AI_Script.moveDirection.x = 10;
-            Debug.Log("we are in the loop");
-            Debug.Log(hit);
-            hit = false;
-            
-        }
-       // AI_Script.moveDirection.x = 0;  //orginal plan was have it jump up to 100 and then back down, but it never changes when doing it this way
-        Debug.Log(hit);
-    }
-    */
     void ScreenWiggle()
     {
         ScreenShake.shakeMe = true;
         //Debug.Log("ScreenWiggle() called");
-
     }
 
     void HurtAnim()
     {
-        //play hurt animation (or at least tell the other script to
-
+        AI_Script.isInputting = true;
+        AI_Script.isAttacking = true;
+        AI_Script.isHit = true;
     }
 
     void HitStun()
     {
         // lock the player in the Hurt animation
         //this may be incorporated with HurtAnim()
-
     }
 }
