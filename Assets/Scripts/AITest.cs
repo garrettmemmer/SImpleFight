@@ -74,12 +74,12 @@ public class AITest : MonoBehaviour
         if (isInputting)
         {
             isInputting = false;
-            Debug.Log("made it here");
+            //Debug.Log("made it here");
             
             if(Health < newHealth)
             {
                     ChangeAnimationState(AI_Hit); // there is some issue with how the animator is set up
-                    Debug.Log("made it here 3");
+                    //Debug.Log("made it here 3");
                 newHealth = Health;
                 Invoke("AttackComplete", attackDelay);
             }

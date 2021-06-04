@@ -28,11 +28,13 @@ public class Hit : MonoBehaviour
             Debug.Log("enemy hit");
             hit = true;
 
+            //play Hurt animation
+            HurtAnim();
+
             //screenshake
             ScreenWiggle();
 
-            //play Hurt animation
-            HurtAnim();
+
 
             //hit stun ///not yet in the game
 

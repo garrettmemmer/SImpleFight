@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AITest.cs" />
      <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
+     <Compile Include="Assets\Scripts\Freezer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HealthBar_AI.cs" />
      <Compile Include="Assets\Scripts\HealthBar_Script.cs" />
