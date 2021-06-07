@@ -28,6 +28,8 @@ public class AITest : MonoBehaviour
 
     [SerializeField]
     private float attackDelay = 1f; // do we need different attack delays?
+    //may need different attack delays for getting hit,
+    //right now we are using attack delay for playing the hit animation and this may be problematic in the future.
 
     private bool isAttackPressed;
     public bool isAttacking;
@@ -78,8 +80,8 @@ public class AITest : MonoBehaviour
             
             if(Health < newHealth)
             {
-                    ChangeAnimationState(AI_Hit); // there is some issue with how the animator is set up
-                    //Debug.Log("made it here 3");
+                ChangeAnimationState(AI_Hit); // there is some issue with how the animator is set up
+                Debug.Log("hit once");
                 newHealth = Health;
                 Invoke("AttackComplete", attackDelay);
             }

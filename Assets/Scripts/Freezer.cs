@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Freezer : MonoBehaviour
 {
-    [Range(0f, 10.5f)]
-    public float duration = 10f;
+    [Range(0f, 1.5f)]
+    public float duration = 1f;
     bool isFrozen = false;
     float pendingFreezeDuration = 0f;
 

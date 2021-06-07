@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  Health: 100
+  Health: 22.63
   moveDirection: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   knockback: 0
@@ -492,7 +492,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 10
   m_AngularDrag: 0.05
-  m_GravityScale: 10.33
+  m_GravityScale: 20.51
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c48c524658ef0964fa83da89478af5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.58
+  duration: 0.19
 --- !u!1 &1999210207
 GameObject:
   m_ObjectHideFlags: 0

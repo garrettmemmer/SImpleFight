@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     AITest AI_Script;
     Freezer freeze_Script;
     float duration = 1f;
+    bool matchOver = false;
+    bool rematchMenu = false;
+    bool firstPass = false;
 
     void Start()
     {
@@ -18,17 +21,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (AI_Script.Health <= 0)
+        if (AI_Script.Health <= 0 && !firstPass )
         {
+
             //freeze the screen
-            //freeze_Script.Freeze();  //so we want this to work, and it does, but it breaks the reset
-
-            //set KO Active
+            freeze_Script.Freeze();  //so we want this to work, and it does, but it breaks the reset
             
+            //set variable to true
+            matchOver = true;
 
-            //wait 
-            //probs has to be a coroutine
-            //WaitForSecondsRealtime(duration);
             StartCoroutine(waiter());
 
         }
@@ -44,11 +45,18 @@ public class GameManager : MonoBehaviour
 
     IEnumerator waiter()
     {
-        transform.GetChild(2).gameObject.SetActive(true);
-        //Wait for 2 seconds
-        yield return new WaitForSecondsRealtime(2);
+        if (matchOver = true)
+        {
+            transform.GetChild(2).gameObject.SetActive(true);
+            //Wait for 2 seconds
+            yield return new WaitForSecondsRealtime(2);
+            transform.GetChild(2).gameObject.SetActive(false);
+            firstPass = true;
+            rematchMenu = true;
+        }
 
-        transform.GetChild(2).gameObject.SetActive(false);
+        matchOver = false;
+
         transform.GetChild(3).gameObject.SetActive(true);
     }
 }
