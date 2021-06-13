@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Animator animator;
 
+    public static PlayerController instance;
+
     private float xAxis;
     public float walkSpeed = 5f;
 
@@ -39,6 +41,12 @@ public class PlayerController : MonoBehaviour
     const string Player_HkRelease = "SfHkRelease";
     const string Player_HkFull = "SfHkFull";
 
+
+
+    void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -119,5 +127,19 @@ public class PlayerController : MonoBehaviour
         if (currentAnimaton == newAnimation) return;
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
+    }
+
+    public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (knockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector3 direction = (obj.transform.position - this.transform.position).normalized;
+            rb2d.AddForce(-direction * knockbackPower);
+        }
+
+        yield return 0;
     }
 }

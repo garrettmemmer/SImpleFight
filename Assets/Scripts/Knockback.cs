@@ -102,6 +102,16 @@ public class Knockback : MonoBehaviour
                 //StartCoroutine(KnockCoroutine(enemy));
             }
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("knockingback");
+            Rigidbody2D player = collision.GetComponent<Rigidbody2D>();
+            if (player != null)
+            {
+                StartCoroutine(PlayerController.instance.Knockback(knockbackDuration, knockbackPower, this.transform));
+                //StartCoroutine(KnockCoroutine(enemy));
+            }
+        }
     }
 }
 

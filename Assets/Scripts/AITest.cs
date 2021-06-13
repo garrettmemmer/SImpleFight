@@ -46,7 +46,6 @@ public class AITest : MonoBehaviour
     void Awake()
     {
         instance = this;
-
     }
 
     void Start()
@@ -58,54 +57,34 @@ public class AITest : MonoBehaviour
     void Update()
     {
         rb2d.velocity = moveDirection * moveSpeed;
+        //
     }
 
     private void FixedUpdate()
     {
         //best for movement and physics
-        //regular update show just be for input checking
+        //regular update should just be for input checking
         float newHealth = 100;
+
+        
 
         if (!isAttacking)
         {
            ChangeAnimationState(AI_idle);
-        }
-
-
-        //input
-        if (isInputting)
+        } 
+        
+        if (Health < newHealth)
         {
-            isInputting = false;
-            //Debug.Log("made it here");
-            
-            if(Health < newHealth)
-            {
-                ChangeAnimationState(AI_Hit); // there is some issue with how the animator is set up
-                Debug.Log("hit once");
-                newHealth = Health;
-                Invoke("AttackComplete", attackDelay);
-            }
-            //if (!isAttacking)
-            //{
-            //    isAttacking = true;
-            //    Debug.Log("made it here 2");
-            //    if (isLowKicking)
-            //    {  //low kick
-            //        ChangeAnimationState(AI_LK);
-
-            //    }
-            //    else if (isDodgeing) //dodge
-            //    {
-            //        ChangeAnimationState(AI_dodge);
-            //    }
-            //    else if (isHit = true)
-            //    {
-            //        ChangeAnimationState(AI_Hit);
-            //        Debug.Log("made it here 3");
-            //    }
-            //    Invoke("AttackComplete", attackDelay);
-            //}
+            ChangeAnimationState(AI_Hit); // there is some issue with how the animator is set up;
+            newHealth = Health;
+            Invoke("AttackComplete", attackDelay);
         }
+        else
+        {
+            MindLessAttack();
+            Invoke("AttackComplete", attackDelay);
+        }
+        
     }
 
     public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)
@@ -118,16 +97,17 @@ public class AITest : MonoBehaviour
             Vector3 direction = (obj.transform.position - this.transform.position).normalized;
             rb2d.AddForce(-direction * knockbackPower);
         }
-
         yield return 0;
     }
 
     void AttackComplete()
     {
+        isInputting = false;
         isAttacking = false;
         isDodgeing = false;
         isLowKicking = false;
         isHit = false;
+        //MindLessAttack();
     }
 
     void ChangeAnimationState(string newAnimation)
@@ -135,5 +115,13 @@ public class AITest : MonoBehaviour
         if (currentAnimaton == newAnimation) return;
         animator.Play(newAnimation);
         currentAnimaton = newAnimation;
+    }
+
+    void MindLessAttack()
+    {
+        ChangeAnimationState(AI_LK);
+        //Debug.Log("mindless");
+        //AttackComplete();
+        //Invoke("AttackComplete", attackDelay);
     }
 }

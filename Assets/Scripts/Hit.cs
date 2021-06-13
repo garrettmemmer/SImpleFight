@@ -25,7 +25,6 @@ public class Hit : MonoBehaviour
         {
             //particle effect
             Instantiate(hitParticles, new Vector3(transform.position.x, transform.position.y +1, transform.position.z), Quaternion.identity);
-            Debug.Log("enemy hit");
             hit = true;
 
             //play Hurt animation
@@ -34,13 +33,32 @@ public class Hit : MonoBehaviour
             //screenshake
             ScreenWiggle();
 
-
-
             //hit stun ///not yet in the game
 
             //adjust health
             DecreaseHealth();
         }
+
+        if (col.gameObject.name.Equals("SimpleFighter"))
+        {
+            Debug.Log("playerhit");
+            //particle effect
+            Instantiate(hitParticles, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            hit = true;
+
+            //play Hurt animation
+            //HurtAnimPlayer();
+
+            //screenshake
+            ScreenWiggle();
+
+            //hit stun ///not yet in the game
+
+            //adjust health
+            //DecreaseHealthPlayer();
+        }
+
+
         hit = false;
     }
 
@@ -52,7 +70,6 @@ public class Hit : MonoBehaviour
     void ScreenWiggle()
     {
         ScreenShake.shakeMe = true;
-        //Debug.Log("ScreenWiggle() called");
     }
 
     void HurtAnim()
