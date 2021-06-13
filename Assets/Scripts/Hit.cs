@@ -24,7 +24,7 @@ public class Hit : MonoBehaviour
         if (col.gameObject.name.Equals("SimpleFighterAI"))
         {
             //particle effect
-            Instantiate(hitParticles, new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z), Quaternion.identity);
+            Instantiate(hitParticles, new Vector3(transform.position.x, transform.position.y +1, transform.position.z), Quaternion.identity);
             Debug.Log("enemy hit");
             hit = true;
 
