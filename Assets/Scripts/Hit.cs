@@ -6,6 +6,7 @@ public class Hit : MonoBehaviour
 {
     [SerializeField]
     GameObject hitParticles;
+
     AITest AI_Script;
     ShakeBehaviour ScreenShake;
     PlayerController Player_Script;
@@ -16,6 +17,7 @@ public class Hit : MonoBehaviour
     void Start()
     {
         AI_Script = FindObjectOfType<AITest>();
+        Player_Script = FindObjectOfType<PlayerController>();
         ScreenShake = FindObjectOfType<ShakeBehaviour>();
     }
 
@@ -55,7 +57,7 @@ public class Hit : MonoBehaviour
             //hit stun ///not yet in the game
 
             //adjust health
-            //DecreaseHealthPlayer();
+            DecreaseHealthPlayer();
         }
 
 
@@ -65,6 +67,11 @@ public class Hit : MonoBehaviour
     void DecreaseHealth()
     {
         AI_Script.Health -= 10;
+    }
+
+    void DecreaseHealthPlayer()
+    {
+        Player_Script.Health -= 10;
     }
 
     void ScreenWiggle()

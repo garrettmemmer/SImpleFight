@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 5f;
 
     public float Health = 100f;
+    public float newHealth = 100f;
 
     public bool invicible = false;
     private string currentAnimaton;
@@ -36,10 +37,7 @@ public class PlayerController : MonoBehaviour
     const string Player_idle = "PlayerIdle";
     const string Player_dodge = "SFDodge";
     const string Player_LK = "SFLK";
-    const string Player_HkStart = "SfHkStart";
-    const string Player_HkCharge = "SfHkCharge";
-    const string Player_HkRelease = "SfHkRelease";
-    const string Player_HkFull = "SfHkFull";
+    const string Player_Hit = "SFHit";
 
 
 
@@ -71,7 +69,6 @@ public class PlayerController : MonoBehaviour
             isInputting = true;
             isDodgeing = true;
         }
-
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * walkSpeed;
     }
@@ -108,6 +105,17 @@ public class PlayerController : MonoBehaviour
 
                 Invoke("AttackComplete", attackDelay);
             }
+        }
+
+        //getting hit
+        if (Health < newHealth)
+        {
+            ChangeAnimationState(Player_Hit); 
+            newHealth = Health;
+            Invoke("AttackComplete", attackDelay);
+            //Debug.Log(Health);
+            //Debug.Log(newHealth);
+            isAttacking = true;
         }
     }
 
