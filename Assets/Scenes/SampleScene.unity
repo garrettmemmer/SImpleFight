@@ -435,22 +435,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa22a0eaf233b734da44a6603a553998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 10
+  newHealth: 100
   walkSpeed: 5
-  Health: 100
   moveDirection: {x: 0, y: 0, z: 0}
   moveSpeed: 5
   knockback: 0
   knockbackLength: 0
   knockbackCount: 0
+  knockbackPower: 100
+  knockbackDuration: 1
   invicible: 0
   isInputting: 0
   isDodgeing: 0
   isLowKicking: 0
   isHit: 0
+  isDead: 0
   attackDelay: 1
   isAttacking: 0
-  knockbackPower: 100
-  knockbackDuration: 1
+  nextActionTime: 0
+  period: 0.1
+  moveTime: 0.1
+  movingDirection: 0
 --- !u!61 &420640105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2409,6 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b96660ee0c1bf468f366117780c361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matchOver: 0
 --- !u!114 &1987444866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2422,6 +2429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.19
+  matchOver: 0
 --- !u!1 &1999210207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,6 +2733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   Health: 100
+  newHealth: 100
   invicible: 0
   isInputting: 0
   isDodgeing: 0

@@ -7,6 +7,9 @@ public class AITest : MonoBehaviour
     private Animator animator;
     public static AITest instance;
 
+    GameManager GM_Script;
+    Freezer Freezer_Script;
+
     private Rigidbody2D rb2d;
 
     public float Health = 100f;
@@ -29,6 +32,7 @@ public class AITest : MonoBehaviour
     public bool isDodgeing = false;
     public bool isLowKicking = false;
     public bool isHit = false;
+    public bool isDead = false;
 
     [SerializeField]
     private float attackDelay = 1f; // do we need different attack delays?
@@ -43,6 +47,7 @@ public class AITest : MonoBehaviour
     const string AI_dodge = "SFDodge";
     const string AI_LK = "SFLK";
     const string AI_Hit = "SFHit";
+    const string AI_dead = "SFKO"; // needs to be created
 
     //Timer for AI moving
     public float nextActionTime = 0.0f;
@@ -59,37 +64,52 @@ public class AITest : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        GM_Script = FindObjectOfType<GameManager>();
+        Freezer_Script = FindObjectOfType<Freezer>();
     }
 
     void Update()
     {
         rb2d.velocity = moveDirection * moveSpeed;
 
-
-
-        if (moveTime > .3) // we may need some different kinda timer 
+        if (Freezer_Script.matchOver == 0)
         {
-            //move back and forth
-            Vector3 movement = new Vector3(movingDirection, 0f, 0f); 
-            transform.position += movement * Time.deltaTime * walkSpeed;
-            
-            Debug.Log(movement);
-            if (moveTime > 1)
+
+            if (moveTime > .3) // we may need some different kinda timer 
             {
-                moveTime = 0;
-                movingDirection = (Random.Range(0, 2) * 2 - 1);
-            }
-        }
-        moveTime += UnityEngine.Time.deltaTime;
-        Debug.Log(moveTime);
+                //move back and forth
+                Vector3 movement = new Vector3(movingDirection, 0f, 0f);
+                transform.position += movement * Time.deltaTime * walkSpeed;
 
-        if (period > 2) // could change this time interval to anything
-        {
-            isInputting = true;
-            isLowKicking = true;
-            period = 0;
+                //Debug.Log(movement);
+                if (moveTime > 1)
+                {
+                    moveTime = 0;
+                    movingDirection = (Random.Range(0, 2) * 2 - 1);
+                }
+            }
+            moveTime += UnityEngine.Time.deltaTime;
+            //Debug.Log(moveTime);
+
+            if (period > 2) // could change this time interval to anything
+            {
+                isInputting = true;
+                isLowKicking = true;
+                period = 0;
+            }
+            period += UnityEngine.Time.deltaTime;
         }
-        period += UnityEngine.Time.deltaTime;
+        if (Freezer_Script.matchOver == 1) 
+        {
+            //play KO animation
+            isInputting = true;
+            //isAttacking = true;
+            isDead = true;
+            Debug.Log("should go to death");
+            //Debug.Log(Freezer_Script.matchOver);
+        }
+
     }
 
     private void FixedUpdate()
@@ -122,6 +142,11 @@ public class AITest : MonoBehaviour
                 else if (isDodgeing) //dodge
                 {
                     ChangeAnimationState(AI_dodge);
+                }
+                else if (isDead) //KO at end of match
+                {
+                    ChangeAnimationState(AI_dead);
+                    Debug.Log("we made it to death!");
                 }
 
                 Invoke("AttackComplete", attackDelay);

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     AITest AI_Script;
     Freezer freeze_Script;
     float duration = 1f;
-    bool matchOver = false;
+    public bool matchOver = false;
     bool rematchMenu = false;
     bool firstPass = false;
 
