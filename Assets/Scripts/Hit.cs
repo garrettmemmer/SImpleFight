@@ -33,7 +33,7 @@ public class Hit : MonoBehaviour
             HurtAnim();
 
             //screenshake
-            ScreenWiggle();
+            //ScreenWiggle();
 
             //hit stun ///not yet in the game
 

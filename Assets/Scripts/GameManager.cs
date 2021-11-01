@@ -6,10 +6,21 @@ public class GameManager : MonoBehaviour
 {
     AITest AI_Script;
     Freezer freeze_Script;
+
     float duration = 1f;
     public bool matchOver = false;
     bool rematchMenu = false;
     bool firstPass = false;
+
+
+
+/////////////////////////////////////////////////
+//Data from character select screen
+////////////////////////////////////////////////
+    CharacterSelection P1CharacterSelectionScript;
+    CharacterSelectPlayer2 P2CharacterSelectionScript;
+    StageSelection StageSelectionScript;
+///////////////////////////////////////////////////
 
     void Start()
     {
@@ -45,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator waiter()
     {
-        if (matchOver = true)
+        if (matchOver == true)
         {
             transform.GetChild(2).gameObject.SetActive(true);
             //Wait for 2 seconds

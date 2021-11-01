@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.2.18f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
-    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -47,20 +45,41 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.18f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2019.2.18f1\Editor\Data\Managed/UnityEditor.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
      <Compile Include="Assets\New Characters\Hero Knight - Pixel Art\ColorSwap\ColorSwap_HeroKnight.cs" />
      <Compile Include="Assets\New Characters\Hero Knight - Pixel Art\Demo\DestroyEvent_HeroKnight.cs" />
      <Compile Include="Assets\New Characters\Hero Knight - Pixel Art\Demo\HeroKnight.cs" />
      <Compile Include="Assets\New Characters\Hero Knight - Pixel Art\Demo\Sensor_HeroKnight.cs" />
-     <Compile Include="Assets\Scripts\AITest.cs" />
+     <Compile Include="Assets\Scripts\CharacterSelection.cs" />
+     <Compile Include="Assets\Scripts\CharacterSelectPlayer2.cs" />
      <Compile Include="Assets\Scripts\DestroyGameObject.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\AITest.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\Bean.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\BeanController.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\Fighter.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\FighterController.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\PlayerCollision.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\RealStateMachine.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\StateObject.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealDuckingState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealGroundedState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealJumpingState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealStandingState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\TestUIManager.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\Character.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\CharacterData.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\DestroyAfterAWhile.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\HitBox.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\SimpleCamFollow.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\State.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\States\DuckingState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\States\GroundedState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\States\JumpingState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\StateMachine\States\StandingState.cs" />
      <Compile Include="Assets\Scripts\Freezer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HealthBar_AI.cs" />
@@ -68,9 +87,13 @@
      <Compile Include="Assets\Scripts\Hit.cs" />
      <Compile Include="Assets\Scripts\Knockback.cs" />
      <Compile Include="Assets\Scripts\KOMessage.cs" />
+     <Compile Include="Assets\Scripts\LoadCharacter.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ShakeBehaviour.cs" />
+     <Compile Include="Assets\Scripts\SpriteChanger.cs" />
+     <Compile Include="Assets\Scripts\StageSelection.cs" />
+     <Compile Include="Assets\Scripts\StartGame.cs" />
+     <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -159,6 +182,9 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/Garrett/Documents/GitHub/SImpleFight/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -336,6 +362,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.18f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -685,12 +714,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="TextToTMP.Editor.csproj">
-      <Project>{89CEF478-CE5A-4601-8B4C-9BF5D3B59661}</Project>
+      <Project>{71B32C7F-B0F7-3AA8-04BC-3F0A0454B74D}</Project>
       <Name>TextToTMP.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
