@@ -19,6 +19,7 @@ public class BeanController : MonoBehaviour
     public RealStandingState standing;
     public RealDuckingState ducking;
     public RealJumpingState jumping;
+    public RealAttackingState attackingState;
 
 
     [SerializeField]
@@ -72,6 +73,7 @@ public class BeanController : MonoBehaviour
         standing = new RealStandingState(this, movementSM);
         ducking = new RealDuckingState(this, movementSM);
         jumping = new RealJumpingState(this, movementSM);
+        attackingState = new RealAttackingState(this, movementSM);
 
         movementSM.Initialize(standing);
     }
