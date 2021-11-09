@@ -1,15 +1,17 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-    public class RealJumpingState : RealAirState
+    public class RealAirState : StateObject
     {
         private bool grounded;
         private int jumpParam = Animator.StringToHash("Jump");
         private int landParam = Animator.StringToHash("Land");
 
-        public RealJumpingState(BeanController beanCharacter, RealStateMachine realStateMachine) : base(beanCharacter, realStateMachine)
+        //this should be tracking if the player is on the ground or not
+
+        public RealAirState(BeanController beanCharacter, RealStateMachine realStateMachine) : base(beanCharacter, realStateMachine)
         {
         }
 

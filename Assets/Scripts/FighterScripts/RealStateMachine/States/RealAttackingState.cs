@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class RealAttackingState : StateObject
+public class RealAttackingState : RealGroundedState
 {
     //Variables
     private bool attackpressed;

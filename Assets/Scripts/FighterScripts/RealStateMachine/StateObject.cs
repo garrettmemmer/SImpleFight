@@ -19,26 +19,12 @@ using UnityEngine;
             DisplayOnUI(TestUIManager.TestAlignment.Left);
             //Debug.Log("fuck Enter");
         }
+        public virtual void HandleInput(){ }
+        public virtual void LogicUpdate(){}
 
-        public virtual void HandleInput()
-        {
+        public virtual void PhysicsUpdate(){}
 
-        }
-
-        public virtual void LogicUpdate()
-        {
-
-        }
-
-        public virtual void PhysicsUpdate()
-        {
-
-        }
-
-        public virtual void Exit()
-        {
-
-        }
+        public virtual void Exit(){}
 
         protected void DisplayOnUI(TestUIManager.TestAlignment testAlignment)
         {
