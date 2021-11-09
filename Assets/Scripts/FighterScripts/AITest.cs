@@ -106,7 +106,7 @@ public class AITest : MonoBehaviour
             isInputting = true;
             //isAttacking = true;
             isDead = true;
-            Debug.Log("should go to death");
+            //Debug.Log("should go to death");
             //Debug.Log(Freezer_Script.matchOver);
         }
 

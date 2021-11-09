@@ -48,7 +48,17 @@ public class PlayerInput : MonoBehaviour
             isDodgePressed = false;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift)) //FTilt
+        if (Input.GetKey(KeyCode.C)) //Low Kick
+        {
+            isForwardTiltPressed = true;
+            isInputting = true;
+        } 
+        else
+        {
+            isForwardTiltPressed = false;
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift)) //Heavy Kick
         {
             isInputting = true;
             isForwardTiltPressed = true;

@@ -32,7 +32,7 @@ public class RealAttackingState : StateObject
     public override void HandleInput()
     {
         base.HandleInput();
-        attackpressed = HandleInput.GetButton("Fire3");
+        //attackpressed = HandleInput.GetButton("Fire3");
         //for now, we want this to decect left shift for attacking
     }
 

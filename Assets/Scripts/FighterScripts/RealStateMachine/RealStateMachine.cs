@@ -10,7 +10,7 @@ using UnityEngine;
         {
             CurrentState = startingState;
             startingState.Enter();
-            Debug.Log(CurrentState + " fuck starting stat");
+            Debug.Log(CurrentState + " fuck starting state");
         }
 
         public void ChangeState(StateObject newState)

@@ -5,7 +5,8 @@ using UnityEngine;
 public class Freezer : MonoBehaviour
 {
     [Range(0f, 1.5f)]
-    public float duration = 1f;
+    public float duration1 = 1f;
+    public float durationHitStun = .2f;
     bool isFrozen = false;
     float pendingFreezeDuration = 0f;
 
@@ -23,8 +24,14 @@ public class Freezer : MonoBehaviour
 
     public void Freeze()
     {
-        pendingFreezeDuration = duration;
+        pendingFreezeDuration = duration1;
         //matchOver = true;
+    }
+
+    public void HitStunFreeze()
+    {
+        pendingFreezeDuration = durationHitStun;
+        print("HitStunFreeze");
     }
 
     IEnumerator DoFreeze()
@@ -33,7 +40,7 @@ public class Freezer : MonoBehaviour
         var original = Time.timeScale;
         Time.timeScale = 0f;
 
-        yield return new WaitForSecondsRealtime(duration);
+        yield return new WaitForSecondsRealtime(duration1);
 
         Time.timeScale = original;
         pendingFreezeDuration = 0;

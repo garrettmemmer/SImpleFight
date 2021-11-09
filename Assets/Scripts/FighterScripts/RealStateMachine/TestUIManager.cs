@@ -15,6 +15,10 @@ public class TestUIManager : MonoBehaviour
 
     [SerializeField]
     private Text leftText = null;
+
+    [SerializeField]
+    private Text leftUpperText = null;
+
     [SerializeField]
     private Text rightText = null;
     [SerializeField]
@@ -35,20 +39,24 @@ public class TestUIManager : MonoBehaviour
 
     public void Display(StateObject enteredState, TestAlignment testAlignment)
     {
-        var name = enteredState.ToString();
+        var stateName = enteredState.ToString();
+        var mainStateName = enteredState.ToString();
+        //we will need another parameter in the function, something like StateObject parent state?
+
         //name = name.Remove(name.IndexOf(textToTrim), textToTrim.Length);
         //name = name.Remove(name.IndexOf("StateObject"), 5);
-        print("test entered state: " + name);
+        print("test entered state: " + stateName);
 
         if (testAlignment == TestAlignment.Left)
         {
-             leftText.text = name;
-             print("Test left");
+             leftText.text = stateName;
+             leftUpperText.text = stateName;
+             //print("Test left");
         }
         else
         {
-            rightText.text = name;
-            print("test right");
+            rightText.text = stateName;
+            //print("test right");
         }
     }
 

@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\FighterScripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\RealStateMachine.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\StateObject.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealAttackingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealDuckingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealGroundedState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealJumpingState.cs" />
