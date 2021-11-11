@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     internal BeanController beanScript;
 
+    internal Player1Controller playerscript;
+
     void Update()
     {
         //Check the input manager for button press state

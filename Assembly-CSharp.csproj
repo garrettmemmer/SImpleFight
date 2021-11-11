@@ -94,6 +94,17 @@
      <Compile Include="Assets\Scripts\SpriteChanger.cs" />
      <Compile Include="Assets\Scripts\StageSelection.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Airborne.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Attacking.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\GroundAttack.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Grounded.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Idle.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Jumping.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\MovementSM.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Moving.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\Player1Controller.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\StateMachine2.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
