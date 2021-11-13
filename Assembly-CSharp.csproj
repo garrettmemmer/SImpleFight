@@ -63,9 +63,11 @@
      <Compile Include="Assets\Scripts\FighterScripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\RealStateMachine.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\StateObject.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealAirState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealAttackingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealDuckingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealGroundedState.cs" />
+     <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealHitStun.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealJumpingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\States\RealStandingState.cs" />
      <Compile Include="Assets\Scripts\FighterScripts\RealStateMachine\TestUIManager.cs" />
@@ -94,6 +96,7 @@
      <Compile Include="Assets\Scripts\SpriteChanger.cs" />
      <Compile Include="Assets\Scripts\StageSelection.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\AirAttack.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Airborne.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Attacking.cs" />
      <Compile Include="Assets\Scripts\StateMachine\BaseState.cs" />
