@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundAttack : Grounded
+public class GroundAttack : BaseState
 {
+    protected MovementSM _sm;
     
     private float _horizontalInput;
 
 
 
-    public GroundAttack(MovementSM stateMachine) : base("LowKick", "Attacking", stateMachine) {
-        //_sm = stateMachine;
+    public GroundAttack(string name, string primaryName, MovementSM stateMachine) : base("GroundAttack", "Grounded", stateMachine) {
+        _sm = stateMachine;
     }
 
     public override void Enter()
@@ -24,12 +25,28 @@ public class GroundAttack : Grounded
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        
-        if (_sm.isAnimated == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _sm.isAnimated = true;
+            _sm.isLowKicking = true;
+            stateMachine.ChangeState(_sm.lowKick);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _sm.isAnimated = true;
+            _sm.isHeavyKicking = true;
+            stateMachine.ChangeState(_sm.lowKick);
+        }
+        /*
+        if (_sm.isAnimated == true && _sm.isLowKicking == true)
         {
             _sm.ChangeAnimationState("SFLK");   
         }
-        _sm.Invoke("AnimationComplete", 1f);
+        if (_sm.isAnimated == true && _sm.isHeavyKicking == true)
+        {
+            _sm.ChangeAnimationState("SfHkFull");   
+        }
+       
         Debug.Log(_sm.isAnimated);
 
 
@@ -37,6 +54,7 @@ public class GroundAttack : Grounded
         {
             stateMachine.ChangeState(_sm.idleState);
         }
+        */
     }
      public override void UpdatePhysics()
     {

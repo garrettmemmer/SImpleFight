@@ -12,7 +12,7 @@ public class MovementSM : StateMachine2
     //[HideInInspector]
     //public Moving movingState;
     //public Jumping jumpingState;
-    public GroundAttack groundAttackState;
+    public LowKick lowKick;
 /////////////////////////////////////////////////////////////////////////
     //public SpriteRenderer spriteRenderer;
     public Animator anim;
@@ -24,6 +24,7 @@ public class MovementSM : StateMachine2
     private string currentAnimaton;
     public const string Player_LK = "SFLK";
     const string Player_idle = "PlayerIdle";
+    const string Player_HK = "SfHkFull";
     //const string Player_dodge = "SFDodge";
     //const string Player_Hit = "SFHit";
 
@@ -31,6 +32,8 @@ public class MovementSM : StateMachine2
 //VARIABLES////////////////////////////////////////////////////////
     internal string currentAnimState;
     public bool isAnimated;
+    public bool isLowKicking;
+    public bool isHeavyKicking;
    // public bool isHit;
     //public float knockbackPower = 100;
    // public float knockbackDuration = 1;
@@ -55,7 +58,7 @@ public class MovementSM : StateMachine2
         idleState = new Idle(this);
         movingState = new Moving(this);
         jumpingState = new Jumping(this);
-        groundAttackState = new GroundAttack(this);
+        lowKick = new LowKick(this);
     }
     protected override BaseState GetInitialState()
     {

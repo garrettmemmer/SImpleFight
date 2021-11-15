@@ -16,13 +16,21 @@ public class Grounded : BaseState
     public override void UpdateLogic()
     {
         base.UpdateLogic();
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
             stateMachine.ChangeState(_sm.jumpingState);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _sm.isAnimated = true;
-            stateMachine.ChangeState(_sm.groundAttackState);
+            _sm.isLowKicking = true;
+            stateMachine.ChangeState(_sm.lowKick);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _sm.isAnimated = true;
+            _sm.isHeavyKicking = true;
+            stateMachine.ChangeState(_sm.lowKick);
+        }
+        
     }
 }

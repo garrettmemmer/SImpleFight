@@ -27,7 +27,7 @@ public class Jumping : Airborne
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _sm.isAnimated = true;
-            stateMachine.ChangeState(_sm.groundAttackState);
+            stateMachine.ChangeState(_sm.lowKick);
         }
             
     } 

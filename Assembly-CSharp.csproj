@@ -104,6 +104,7 @@
      <Compile Include="Assets\Scripts\StateMachine\Grounded.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Idle.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Jumping.cs" />
+     <Compile Include="Assets\Scripts\StateMachine\LowKick.cs" />
      <Compile Include="Assets\Scripts\StateMachine\MovementSM.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Moving.cs" />
      <Compile Include="Assets\Scripts\StateMachine\Player1Controller.cs" />
