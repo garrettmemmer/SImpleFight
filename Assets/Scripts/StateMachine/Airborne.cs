@@ -21,6 +21,21 @@ public class Airborne : BaseState
             stateMachine.ChangeState(_sm.idleState);
         _horizontalInput = Input.GetAxis("Horizontal");
 
+/* hitstun test code
+        if (_hit)
+            stateMachine.ChangeState(_sm.hitStun);
+        //this will go in airborne, groundattack, grounded, airattack
+*/
+        //new code to be tested
+        //if (_ledged) 
+        //    stateMachine.ChangeState(_sm.ledgeGetUpState);
+
+        // include this from the jumping script
+       // if (Input.GetKeyDown(KeyCode.LeftShift))
+       // {
+       //     _sm.isAnimated = true;
+        //    stateMachine.ChangeState(_sm.AirAttack);
+        //}
     } 
 
     public override void UpdatePhysics()

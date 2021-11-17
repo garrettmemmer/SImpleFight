@@ -23,11 +23,13 @@ public class Jumping : Airborne
 
     public override void UpdateLogic()
     {
-        base.UpdateLogic();
+        base.UpdateLogic();  //move this to airborne
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _sm.isAnimated = true;
+           // _sm.isAitAttacking = true;
             stateMachine.ChangeState(_sm.lowKick);
+            //stateMachine.ChangeState(_sm.AitAttack);
         }
             
     } 

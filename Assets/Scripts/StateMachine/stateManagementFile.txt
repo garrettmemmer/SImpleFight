@@ -1,0 +1,54 @@
+state management 
+
+goal: explain each states transitions and if theyre implemented
+
+////////////////////
+IDLE///////////////
+//////////////////
+[v] Moving -> updateLogic for horizontal input
+[v] GroundAttack -> grounded(looking for inputs)
+[v] Jumping -> grounded(looking for inputs)
+[] Hitstun ->
+
+////////////////////
+Moving/////////////
+//////////////////
+[v] Idle -> updateLogic for horizontal input
+[x] GroundAttack -> grounded(looking for inputs)
+[v] Jumping -> grounded(looking for inputs)
+[] Hitstun -> 
+
+///////////////////////////////
+Ground Attacks////////////////
+/////////////////////////////
+[x] Idle -> on animation complete, go back here
+[] Hitstun -> 
+
+//////////////////////
+Jumping//////////////
+////////////////////
+[v] Idle -> updateLogic for grounded
+[x] LedgeAttack -> updateLogic for ledge contact(this will be similiar to grounded check)
+[x] Air Attacks ->  should input be moved to airborne base class? probs
+[] Hitstun -> 
+
+//////////////////////////////
+Air Attacks//////////////////
+////////////////////////////
+[x] Idle -> updateLogic for grounded (is this handled in airborne?)
+[] Hitstun -> 
+
+///////////////////////////
+LedgeAttack///////////////
+/////////////////////////
+[x] Idle -> updateLogic after animation complete send to idle
+//working on this for the lowkick first
+
+////////////////////////
+Hit Stun///////////////
+//////////////////////
+[] Idle -> 
+[] Jumping -> 
+[] Air Attacks -> 
+[] Hitstun -> 
+//handle this in MovementSM Update? or add this to the logic for each base state 

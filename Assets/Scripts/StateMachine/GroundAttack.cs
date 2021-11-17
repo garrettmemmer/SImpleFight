@@ -31,13 +31,24 @@ public class GroundAttack : BaseState
             _sm.isLowKicking = true;
             stateMachine.ChangeState(_sm.lowKick);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+       /*
+        if (Input.GetKeyDown(KeyCode.Space)) //implement this state(already drafted in LK state)
         {
             _sm.isAnimated = true;
             _sm.isHeavyKicking = true;
-            stateMachine.ChangeState(_sm.lowKick);
+            stateMachine.ChangeState(_sm.heavyKick);
         }
-        /*
+        if (_ledged) //implement this state(already drafted in LK state)
+        {
+            _sm.isAnimated = true;
+            _sm.isLedgeAttacking = true;
+            stateMachine.ChangeState(_sm.ledgeAttack);
+        }
+        */
+
+
+
+        /* this lead to 1 animation playing and then breaking
         if (_sm.isAnimated == true && _sm.isLowKicking == true)
         {
             _sm.ChangeAnimationState("SFLK");   
@@ -55,6 +66,8 @@ public class GroundAttack : BaseState
             stateMachine.ChangeState(_sm.idleState);
         }
         */
+
+        
     }
      public override void UpdatePhysics()
     {
