@@ -34,6 +34,7 @@ public class MovementSM : StateMachine2
     public bool isAnimated;
     public bool isLowKicking;
     public bool isHeavyKicking;
+    public bool animationCompleted;
    // public bool isHit;
     //public float knockbackPower = 100;
    // public float knockbackDuration = 1;
@@ -80,9 +81,19 @@ public class MovementSM : StateMachine2
         anim.Play(newAnimationState);
         currentAnimState = newAnimationState;
     }
-    public void AnimationComplete()
+    public void AnimationComplete() 
     {
         isAnimated = false;
+        isLowKicking = false;
+        //lowKick.Exit();
+        animationCompleted = true;
+        //ChangeState(idleState);
+    }
+
+    public void AnimationFinished()
+    {
+        ChangeState(idleState);
+        animationCompleted = false;
     }
     
     public IEnumerator Knockback(float knockbackDuration, float knockbackPower, Transform obj)

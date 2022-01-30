@@ -401,10 +401,10 @@ RectTransform:
   m_Father: {fileID: 2078571862}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 312, y: 15}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -836, y: -348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302890316
 MonoBehaviour:
@@ -1351,7 +1351,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.097}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 564, y: -174}
+  m_AnchoredPosition: {x: 300, y: -162}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829385256
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Brought to you by!.... just garrett
+  m_text: Brought to you by!.... just me
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_margin: {x: -338.45996, y: 44.05853, z: 178.40228, w: -34.73845}
   m_textInfo:
     textComponent: {fileID: 1829385256}
-    characterCount: 35
+    characterCount: 30
     spriteCount: 0
     spaceCount: 5
     wordCount: 6
@@ -1602,15 +1602,15 @@ RectTransform:
   m_GameObject: {fileID: 2092194267}
   m_LocalRotation: {x: -0.24107885, y: 0.25035268, z: 0.233562, w: 0.9081043}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9810936, y: 2.1730273, z: 1.2751343}
+  m_LocalScale: {x: 0.38956594, y: 0.4273081, z: 0.2507448}
   m_Children: []
   m_Father: {fileID: 2078571862}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -33.697002, y: 24.278002, z: 21.394001}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -217, y: -34}
-  m_SizeDelta: {x: -734.9, y: -388.2}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -242, y: -39}
+  m_SizeDelta: {x: 936, y: 129.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092194269
 MonoBehaviour:
@@ -1630,7 +1630,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Simple FIght
+  m_text: 'Simple
+
+    Fight'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1659,8 +1661,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 80.3
-  m_fontSizeBase: 80.3
+  m_fontSize: 356.1
+  m_fontSizeBase: 356.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1697,7 +1699,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -108.05858, w: -1.4567719}
+  m_margin: {x: 0, y: 0, z: -615.8479, w: -121.57962}
   m_textInfo:
     textComponent: {fileID: 2092194269}
     characterCount: 12

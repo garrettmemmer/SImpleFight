@@ -35,7 +35,7 @@ public class AITest : MonoBehaviour
     public bool isDead = false;
 
     [SerializeField]
-    private float attackDelay = 1f; // do we need different attack delays?
+    //private float attackDelay = 1f; // do we need different attack delays?
     //may need different attack delays for getting hit,
     //right now we are using attack delay for playing the hit animation and this may be problematic in the future.
 
@@ -138,11 +138,12 @@ public class AITest : MonoBehaviour
                 if (isLowKicking)
                 {  //low kick
                     ChangeAnimationState(AI_LK);
-
+                    Invoke("AttackComplete", .6f);
                 }
                 else if (isDodgeing) //dodge
                 {
                     ChangeAnimationState(AI_dodge);
+                    Invoke("AttackComplete", 1f);
                 }
                 else if (isDead) //KO at end of match
                 {
@@ -156,7 +157,7 @@ public class AITest : MonoBehaviour
                     //call some new function or variable to do the above
                 }
 
-                Invoke("AttackComplete", attackDelay);
+                
             }
             
         }
@@ -170,7 +171,7 @@ public class AITest : MonoBehaviour
         {
             ChangeAnimationState(AI_Hit); 
             newHealth = Health;
-            Invoke("AttackComplete", attackDelay);
+            Invoke("AttackComplete", .3f);
 //                Debug.Log(Health);
 //                Debug.Log(newHealth);
                 isAttacking = true;
@@ -216,6 +217,6 @@ public class AITest : MonoBehaviour
         ChangeAnimationState(AI_LK);
         Debug.Log("mindless");
         AttackComplete();
-        Invoke("AttackComplete", attackDelay);
+        Invoke("AttackComplete", .6f);
     }
 }

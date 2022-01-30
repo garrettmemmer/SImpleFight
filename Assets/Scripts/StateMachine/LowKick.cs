@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class LowKick : GroundAttack
@@ -23,18 +23,27 @@ public class LowKick : GroundAttack
     {
         base.UpdateLogic();
         
-        if (_sm.isAnimated == true && _sm.isLowKicking == true)
+        if (_sm.isLowKicking == true && _sm.isAnimated==false)
         {
-            _sm.ChangeAnimationState("SFLK");   
+            _sm.ChangeAnimationState("SFLK");
+            //_sm.isLowKicking = false;
         }
-        Debug.Log(_sm.isAnimated);
+        //Debug.Log(_sm.isAnimated);
+        _sm.Invoke("AnimationComplete", .7f);
 
 
-        if(_sm.isAnimated == false) //should this call the exit function? and then in Exit we change the state?
+
+        if(_sm.animationCompleted == true) //should this call the exit function? and then in Exit we change the state?
         {
-            stateMachine.ChangeState(_sm.idleState);
+           Debug.Log("fuuuuuuuuuuck");
+             _sm.AnimationFinished();
         }
     }
+
+    //public void Exit() 
+    //{
+     //       stateMachine.ChangeState(_sm.idleState);
+    //}
 }
 
 /* create these states and implement

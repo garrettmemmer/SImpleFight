@@ -1,15 +1,11 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundAttack : BaseState
 {
-    protected MovementSM _sm;
-    
+    protected MovementSM _sm;    
     private float _horizontalInput;
-
-
 
     public GroundAttack(string name, string primaryName, MovementSM stateMachine) : base("GroundAttack", "Grounded", stateMachine) {
         _sm = stateMachine;
@@ -24,13 +20,16 @@ public class GroundAttack : BaseState
 
     public override void UpdateLogic()
     {
+        /*
         base.UpdateLogic();
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            _sm.isAnimated = true;
-            _sm.isLowKicking = true;
+            //_sm.isAnimated = true;
+            //_sm.isLowKicking = true;
             stateMachine.ChangeState(_sm.lowKick);
         }
+*/
+
        /*
         if (Input.GetKeyDown(KeyCode.Space)) //implement this state(already drafted in LK state)
         {

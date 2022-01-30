@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +11,6 @@ public class Grounded : BaseState
         _sm = (MovementSM)stateMachine;
     }
 
-
-
     public override void UpdateLogic()
     {
         base.UpdateLogic();
@@ -21,9 +19,10 @@ public class Grounded : BaseState
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            _sm.isAnimated = true;
+            //_sm.isAnimated = true;
             _sm.isLowKicking = true;
-            stateMachine.ChangeState(_sm.lowKick);
+            //stateMachine.ChangeState(_sm.lowKick);  
+            _sm.ChangeAnimationState("SFLK");
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {

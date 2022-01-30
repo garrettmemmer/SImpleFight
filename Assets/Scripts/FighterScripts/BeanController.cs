@@ -93,22 +93,12 @@ public class BeanController : MonoBehaviour
         movementSM.CurrentState.HandleInput();
 
         movementSM.CurrentState.LogicUpdate();
-        /*
-        if (isHit)
-        {
-            ChangeState("SFHit");
-            isAnimated = true;
-            Invoke("AnimationComplete", .5f);
-            isHit = false;
-        }
-*/
+
         if (health < newHealth)
         {
             ChangeState("SFHit");
             newHealth = health;
             Invoke("AnimationComplete", .5f); //this should be a variable for hit stun
-            //Debug.Log(Health);
-            //Debug.Log(newHealth);
             isAnimated = true;
             isHit = false;
         }
@@ -132,13 +122,14 @@ public class BeanController : MonoBehaviour
                 if (inputScript.isForwardTiltPressed)
                 {
                     ChangeState("SFLK");
-                    //ForwardTilt();
+                    Invoke("AnimationComplete", .6f);
                 }
                 else if (inputScript.isDodgePressed)
                 {
                     ChangeState("SFDodge");
+                    Invoke("AnimationComplete", 1f);
                 }
-                Invoke("AnimationComplete", 1f);
+                
             }
         }
     }
