@@ -9,8 +9,7 @@ using UnityEngine;
         public RealDuckingState(BeanController beanCharacter, RealStateMachine stateMachine) : base(beanCharacter, stateMachine)
         { 
         }
-
-        public override void Enter()
+         public override void Enter()
         {
             base.Enter();
            // beanCharacter.SetAnimationBool(character.crouchParam, true);

@@ -30,9 +30,12 @@ public class PlayerCollision : MonoBehaviour
 
             //particales
             Instantiate(hitParticles, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            
             //screenshake
 
+
             //hitstun
+
 
             //adjusthealth
             beanScript.health -= 10;

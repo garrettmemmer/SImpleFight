@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,5 +52,12 @@ public class PlayerMovement : MonoBehaviour
     private void ForwardTilt()
     {
         beanScript.ChangeState("SFLK");
+         Debug.Log("this changed state: mvc");
+        //this is not in use yet
+    }
+
+    private void SpotDodge()
+    {
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +23,7 @@ public class Hit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) //when the computer gets hit
     {
-        if (col.gameObject.name.Equals("SimpleFighterAI"))
+        if (col.gameObject.name.Equals("SimpleFighterAI")) //this should be looking for a tag of hurtbox
         {
             //particle effect
             Instantiate(hitParticles, new Vector3(transform.position.x, transform.position.y +1, transform.position.z), Quaternion.identity);

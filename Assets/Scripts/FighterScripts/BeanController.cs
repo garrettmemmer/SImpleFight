@@ -20,6 +20,8 @@ public class BeanController : MonoBehaviour
     public RealDuckingState ducking;
     public RealJumpingState jumping;
     public RealAttackingState attackingState;
+    public RealHitStun dodging; //this is fucked
+    //this state machine is so messed up
 
 
     [SerializeField]
@@ -122,11 +124,13 @@ public class BeanController : MonoBehaviour
                 if (inputScript.isForwardTiltPressed)
                 {
                     ChangeState("SFLK");
+                     Debug.Log("this changed state: base script");
                     Invoke("AnimationComplete", .6f);
                 }
                 else if (inputScript.isDodgePressed)
                 {
                     ChangeState("SFDodge");
+                    //set the hurtbox to off
                     Invoke("AnimationComplete", 1f);
                 }
                 

@@ -60,8 +60,8 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift)) //Heavy Kick
         {
-            isInputting = true;
             isForwardTiltPressed = true;
+            isInputting = true;
         }
         else
         {
