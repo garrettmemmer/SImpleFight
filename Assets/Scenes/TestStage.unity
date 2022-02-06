@@ -340,7 +340,7 @@ RectTransform:
   - {fileID: 557126525}
   - {fileID: 390623310}
   m_Father: {fileID: 8836698055330609666}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4159,7 +4159,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8836698055330609666}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &8836698053767321686
 CircleCollider2D:
@@ -4188,8 +4188,8 @@ Transform:
   m_LocalPosition: {x: -4.45, y: -0.01, z: -1.51}
   m_LocalScale: {x: 0.06642, y: 0.0717302, z: 1}
   m_Children:
-  - {fileID: 8836698053767321683}
   - {fileID: 222708566}
+  - {fileID: 8836698053767321683}
   - {fileID: 152345924}
   - {fileID: 538232381}
   m_Father: {fileID: 0}

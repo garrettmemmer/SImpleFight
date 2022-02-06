@@ -41,7 +41,7 @@ public class Hit : MonoBehaviour
             DecreaseHealth();
         }
 
-        if (col.gameObject.name.Equals("SimpleFighter"))
+        if (col.gameObject.name.Equals("BeanV2")) //BeanV2
         {
             Debug.Log("playerhit");
             //particle effect
