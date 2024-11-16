@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //go straight to test build
-        SceneManager.LoadScene("CharacterSelection"); //go to character select
+        SceneManager.LoadScene("SampleScene"); //go to character select
     }
 
     public void ResetGame()

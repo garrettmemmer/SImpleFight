@@ -16,7 +16,7 @@ using UnityEngine;
 
         public virtual void Enter()
         {
-            DisplayOnUI(TestUIManager.TestAlignment.Left);
+            //DisplayOnUI(TestUIManager.TestAlignment.Left);
             //Debug.Log("fuck Enter");
         }
         public virtual void HandleInput(){}

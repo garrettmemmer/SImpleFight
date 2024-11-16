@@ -8,11 +8,12 @@ public class GameManager : MonoBehaviour
     Freezer freeze_Script;
 
     float duration = 1f;
-    public bool matchOver = false;
-    bool rematchMenu = false;
-    bool firstPass = false;
+    //public bool matchOver = false;
+    //bool rematchMenu = false;
+    bool firstPass = true;
 
-
+    public GameObject gameOverGameObject;
+    public GameObject gameOverMenu;
 
 /////////////////////////////////////////////////
 //Data from character select screen
@@ -26,48 +27,77 @@ public class GameManager : MonoBehaviour
     {
         AI_Script = FindObjectOfType<AITest>();
         freeze_Script = FindObjectOfType<Freezer>();
-
-        //rb2d = GetComponent<Rigidbody2D>();  //get the child component of KO Message set to active
     }
 
     void Update()
     {
-        if (AI_Script.Health <= 0 && !firstPass )
+        if (AI_Script.Health <= 0 && firstPass )
         {
-            print("should be over");
-            //freeze the screen
-            freeze_Script.Freeze();  //so we want this to work, and it does, but it breaks the reset
-            
-            //set variable to true
-            matchOver = true;
+            EndFight();
+        }
 
-            StartCoroutine(waiter());
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //freeze the game
+            //pull up the reset/quit menu
 
+            //if escape pressed again //resume the game
+            //close the menu
+            //unfreeze the game
         }
     }
 
-    // enable ko message here probably
-    // if aihealthbar <= 0 
-    //screen freeze
-    //then KO message Active
-    //wait one second
-    //reset/quit menu active
+    // if aihealthbar <= 0 and its first pass
+        //call endfight
+    //endfight
+        //screen freeze
+        //then KO message Active
+    //invoke(postFightMenu, 1.5)
+        //wait one.5 second
+        //ko off
+        //reset/quit menu active
+
+
+
+    void EndFight()
+    {
+        firstPass = false;
+        print("should be over"); 
+
+        freeze_Script.Freeze();
+
+        print("turing on KO");
+        gameOverGameObject.SetActive(true);
+
+        Invoke("PostFightMenu", 1.5f);
+        //print("entering coroutine");
+        //StartCoroutine(waiter());
+        //print("exiting coroutine");
+
+        //print("turning on menu");
+        //gameOverMenu.SetActive(true);
+    }
+
+    void PostFightMenu()
+    {
+        print("freeze and ko should activate, then this text appears 1.5 seconds later");
+        
+        //turning off KO
+        gameOverGameObject.SetActive(false);
+
+        //print("turning on menu");
+        gameOverMenu.SetActive(true);
+    }
+
 
 
     IEnumerator waiter()
     {
-        if (matchOver == true)
-        {
-            transform.GetChild(0).gameObject.SetActive(true);
-            //Wait for 2 seconds
-            yield return new WaitForSecondsRealtime(2);
-            transform.GetChild(0).gameObject.SetActive(false);
-            firstPass = true;
-            rematchMenu = true;
-        }
+        print("inside the couroutine");
+        freeze_Script.Freeze();
+        gameOverGameObject.SetActive(false);
 
-        matchOver = false;
-
-        transform.GetChild(1).gameObject.SetActive(true);
+        //Wait for 2 seconds
+        yield return new WaitForSecondsRealtime(2);
     }
 }

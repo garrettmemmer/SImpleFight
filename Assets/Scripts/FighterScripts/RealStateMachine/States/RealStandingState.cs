@@ -36,7 +36,7 @@ using UnityEngine;
             if (lowKick)
             {
                 stateMachine.ChangeState(beanCharacter.ducking);
-                Debug.Log("low kick input from standing state");
+                //Debug.Log("low kick input from standing state");
             }
             else if (jump)
             {
@@ -45,7 +45,7 @@ using UnityEngine;
             else if(dodge)
             {
                 //stateMachine.ChangeState(beanCharacter.dodging);
-                Debug.Log("dodge input from standing state");
+                //Debug.Log("dodge input from standing state");
                 
             }
         }

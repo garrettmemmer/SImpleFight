@@ -124,7 +124,7 @@ public class BeanController : MonoBehaviour
                 if (inputScript.isForwardTiltPressed)
                 {
                     ChangeState("SFLK");
-                     Debug.Log("this changed state: base script");
+                     //Debug.Log("this changed state: base script");
                     Invoke("AnimationComplete", .6f);
                 }
                 else if (inputScript.isDodgePressed)

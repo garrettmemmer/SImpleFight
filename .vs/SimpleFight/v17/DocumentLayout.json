@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|d:\\root\\code\\unityprojects\\simplefight\\simplefight\\assets\\scripts\\freezer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\freezer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|d:\\root\\code\\unityprojects\\simplefight\\simplefight\\assets\\scripts\\komessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\komessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\assets\\scripts\\healthbar_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D422F75-B577-B705-BAFB-0A2C9FA4452D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthbar_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Freezer.cs",
+              "DocumentMoniker": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\Freezer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Freezer.cs",
+              "ToolTip": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\Freezer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Freezer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T14:59:13.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T17:38:30.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KOMessage.cs",
+              "DocumentMoniker": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\KOMessage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\KOMessage.cs",
+              "ToolTip": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\KOMessage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\KOMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T14:54:27.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HealthBar_Script.cs",
+              "DocumentMoniker": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\HealthBar_Script.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HealthBar_Script.cs",
+              "ToolTip": "D:\\Root\\Code\\UnityProjects\\SimpleFight\\SImpleFight\\Assets\\Scripts\\HealthBar_Script.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HealthBar_Script.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T17:21:39.49Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -200,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0026213825, y: -0.008739889}
+  m_Offset: {x: -0.002620697, y: -2.5045433}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -211,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 44, y: 55}
+  m_Size: {x: 44, y: 59.991608}
   m_EdgeRadius: 0
 --- !u!61 &8050074058033969240
 BoxCollider2D:
@@ -226,7 +226,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0026213825, y: -0.008739889}
+  m_Offset: {x: -0.002620697, y: -2.054121}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -237,7 +237,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 44, y: 57}
+  m_Size: {x: 44, y: 61.090763}
   m_EdgeRadius: 0
 --- !u!114 &8050074058033969245
 MonoBehaviour:
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa22a0eaf233b734da44a6603a553998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 10
+  Health: 100
   newHealth: 100
   walkSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
@@ -267,7 +267,7 @@ MonoBehaviour:
   isLowKicking: 0
   isHit: 0
   isDead: 0
-  attackDelay: 1
+  isAttackPressed: 0
   isAttacking: 0
   nextActionTime: 0
   period: 0.1
